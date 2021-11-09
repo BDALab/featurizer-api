@@ -22,7 +22,7 @@ To make the use of the Featurizer API as easy as possible, there is a [PyPi-inst
     2. `/login` - logs-in an existing user (obtains access and refresh JWT tokens).
     3. `/refresh` - refreshes an expired access token (obtains refreshed FWT access token).
 
-_The full programming sphinx-generated docs can be seen in `docs/`_.
+_The full programming sphinx-generated docs can be seen in the [official documentation](https://featurizer-api.readthedocs.io/en/latest/)_.
 
 **Contents**:
 1. [Installation](#Installation)
