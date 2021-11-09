@@ -1,6 +1,5 @@
 # Featurizer API
 
-![GitHub contributors](https://img.shields.io/github/contributors/BDALab/featurizer-api)
 ![GitHub last commit](https://img.shields.io/github/last-commit/BDALab/featurizer-api)
 ![GitHub issues](https://img.shields.io/github/issues/BDALab/featurizer-api)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/BDALab/featurizer-api)
