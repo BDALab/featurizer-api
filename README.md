@@ -65,7 +65,10 @@ venv\Scripts\activate.bat
 # Install dependencies
 pip install -r requirements.txt
 
-# Create .env file with the JWT secret key (see the configuration section bellow)
+# Two necessary steps (see the configuration section bellow):
+#
+# 1. create .env file with the JWT secret key at api/.env
+# 2. configure features extractor libary injection in api/configuration/injection.json
 ```
 
 ## Configuration
@@ -76,7 +79,7 @@ The package provides various configuration files stored at `api/configuration`. 
 3. cors (`api/configuration/cors.json`): it supports the configuration of the cross-origin resource sharing. In this version, no sources are added to the `origins`, (to be updated per deployment).
 4. caching (`api/configuration/caching.json`): it supports the configuration of API request-response caching. In this version, the simple in-memory caching with the TTL of 60 seconds is used.
 5. logging (`api/configuration/logging.json`): it supports the configuration of the logging. The package provides logging on three levels: (a) request, (b) response, (c) werkzeug. The log files are created in the `logs` directory located at the featurizer's root directory.
-6. featurization (`api/configuration/injection.json`): it supports the configuration of the features-extraction library injection. The main configuration is the name of the library to be injected. **By design, the features-extraction library is not part of the `requirements.txt` and must be installed separately**. The injection of the feature extractor as well as the requirements on the features-extraction library and the process of featurization are summarized in the [Featurization](#Featurization) and [Injection](#Injection) sections.
+6. featurization (`api/configuration/injection.json`): it supports the configuration of the features-extraction library injection. By design, the features-extraction library is not part of the `requirements.txt`. The injection of the feature extractor as well as the requirements on the features-extraction library and the process of featurization are summarized in the [Featurization](#Featurization) and [Injection](#Injection) sections.
 
 ## Featurization
 
@@ -229,7 +232,36 @@ class FeatureExtractor(object):
 
 ## Injection
 
-To inject the features-extraction library and to get the feature extractor, the featurizer API uses two functions: (a) `import_features_extractor` (abbr. _inject extractor_ function), and (b) `import_features_extractor_exceptions` (abbr. _inject exceptions_ function), both located at `api/featurization/library_injection/imports`. First, it uses the _inject extractor_ function to get the feature extractor class `FeatureExtractor` from `<library_name>.interface.featurizer` and then it uses the _inject exceptions_ function to get the feature extractor-specific exceptions from `<library_name>.interface.featurizer.exceptions` to be handled as client-side errors. The `<library_name>` **must be specified** at `api/configuration/injection.json` and it **must be installed manually before the API can be used**.
+The injection of the features-extraction library is configured in `api/configuration/injection.json`. The configuration looks as following:
+
+```
+{
+  "features_extraction_library": {
+    "injection_types": [
+      "local",
+      "pip"
+    ],
+    "injection_type": "",
+    "injection": {
+      "local": {
+        "import_name": "",
+        "installation_name": ""
+      },
+      "pip": {
+        "import_name": "",
+        "installation_name": ""
+      }
+    }
+  }
+}
+```
+
+There are two options how to inject a feature extractor:
+
+1. `injection_type` is set to `pip`; features-extraction library is installed via `pip`, in this case, the `import_name` as well as the `installation_name` must be specified (exception is raised otherwise)
+2. `injection_type` is set to `local`; features-extraction library package is placed at `featurizer-api`, in this case, the `import_name` is needed only (no installation needed) (exception is raised otherwise)
+
+The `installation_name` is used to install the features-extraction library via `pip install <installation_name>`. And the `import_name` is used to import the feature extractor and feature extractor-specific exceptions via `import <import_name>.interface.featurizer.FeatureExtractor` and `from <import_name>.interface.featurizer.exceptions import *`.
 
 ## Workflow
 

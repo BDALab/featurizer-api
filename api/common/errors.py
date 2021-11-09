@@ -9,12 +9,7 @@ from marshmallow import ValidationError
 from api.wrappers.request import RequestWrappingException, RequestUnwrappingException
 from api.wrappers.response import ResponseWrappingException, ResponseUnwrappingException
 from api.wrappers.data import DataUnwrappingException, DataWrappingException
-from api.featurization.library_injection.imports import (
-    FeaturesExtractionLibraryNotDefinedException,
-    FeaturesExtractionLibraryNotInstalledException,
-    FeaturesExtractionLibraryImportFailedException,
-    FeaturesExtractorNotImportableException
-)
+
 
 # -------------------------------------------------- #
 # Specifically handled client side errors definition #
@@ -27,10 +22,6 @@ errors_client_side = (
     ResponseUnwrappingException,
     DataWrappingException,
     DataUnwrappingException,
-    FeaturesExtractionLibraryNotDefinedException,
-    FeaturesExtractionLibraryNotInstalledException,
-    FeaturesExtractionLibraryImportFailedException,
-    FeaturesExtractorNotImportableException
 )
 
 

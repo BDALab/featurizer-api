@@ -1,3 +1,19 @@
 {
-  "features_extraction_library": ""
+  "features_extraction_library": {
+    "injection_types": [
+      "local",
+      "pip"
+    ],
+    "injection_type": "local",
+    "injection": {
+      "local": {
+        "import_name": "handwriting_features",
+        "installation_name": ""
+      },
+      "pip": {
+        "import_name": "",
+        "installation_name": ""
+      }
+    }
+  }
 }

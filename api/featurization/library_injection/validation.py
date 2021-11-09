@@ -1,4 +1,3 @@
-from api.common.logging import get_application_logger
 from api.featurization.library_injection.imports import *
 
 
@@ -8,20 +7,12 @@ from api.featurization.library_injection.imports import *
 
 def validate_features_library(features_extraction_library_name):
     """Returns the injected features extraction library"""
-    try:
-        validate_importing_features_extraction_library(features_extraction_library_name)
-    except Exception as e:
-        get_application_logger().error(f"Injected features extraction library cannot be imported: {e}")
-        exit(-1)
+    validate_importing_features_extraction_library(features_extraction_library_name)
 
 
 def get_validated_features_extractor(features_extraction_library):
     """Returns the injected features extractor"""
-    try:
-        return import_features_extractor(features_extraction_library)
-    except Exception as e:
-        get_application_logger().error(e)
-        return None
+    return import_features_extractor(features_extraction_library)
 
 
 def get_validated_features_extractor_exceptions(features_extraction_library):
