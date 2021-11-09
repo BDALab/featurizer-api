@@ -1,5 +1,12 @@
 # Featurizer API
 
+![GitHub contributors](https://img.shields.io/github/contributors/BDALab/featurizer-api)
+![GitHub last commit](https://img.shields.io/github/last-commit/BDALab/featurizer-api)
+![GitHub issues](https://img.shields.io/github/issues/BDALab/featurizer-api)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/BDALab/featurizer-api)
+![GitHub top language](https://img.shields.io/github/languages/top/BDALab/featurizer-api)
+![GitHub](https://img.shields.io/github/license/BDALab/featurizer-api)
+
 **Server side application**:
 
 This package provides a modern RESTFull featurizer API created using Python programming language and [Flask-RESTful](https://flask-restful.readthedocs.io/en/latest/) library. It is designed to be used for various feature extraction libraries due to its feature injection capabilities (instructions are provided in the [Configuration](#Configuration) section) and flexible input/output data definition (multi-dimensional samples/features, multiple subjects, etc.). On top of that, the featurizer API provides endpoints for user authentication and JWT-based request authorization, it supports handling of cross-origin resource sharing, request-response caching, advanced logging, etc. It comes also with the basic support for containerization via Docker (Dockerfile and docker-compose).
