@@ -1,0 +1,12 @@
+flask
+Flask-RESTful
+Flask-SQLAlchemy
+Flask-Bcrypt
+Flask-JWT-Extended
+Flask-Cors
+flask-api-cache
+webargs
+marshmallow
+python-dotenv
+numpy
+json-tricks

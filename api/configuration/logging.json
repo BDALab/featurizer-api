@@ -1,0 +1,32 @@
+{
+  "werkzeug": {
+    "class": "logging.handlers.TimedRotatingFileHandler",
+    "kwargs": {
+      "filename": "werkzeug.log",
+      "when": "midnight",
+      "interval": 1,
+      "backupCount": 365,
+      "encoding": "utf8"
+    }
+  },
+  "request": {
+    "class": "logging.handlers.TimedRotatingFileHandler",
+    "kwargs": {
+      "filename": "request.log",
+      "when": "midnight",
+      "interval": 1,
+      "backupCount": 365,
+      "encoding": "utf8"
+    }
+  },
+  "response": {
+    "class": "logging.handlers.TimedRotatingFileHandler",
+    "kwargs": {
+      "filename": "response.log",
+      "when": "midnight",
+      "interval": 1,
+      "backupCount": 365,
+      "encoding": "utf8"
+    }
+  }
+}

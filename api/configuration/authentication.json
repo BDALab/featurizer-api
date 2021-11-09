@@ -1,0 +1,6 @@
+{
+  "database": {
+    "SQLALCHEMY_DATABASE_URI": "sqlite:///api/authentication/database/database/database.db",
+    "SQLALCHEMY_TRACK_MODIFICATIONS": false
+  }
+}
