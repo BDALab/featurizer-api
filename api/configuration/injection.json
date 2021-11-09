@@ -4,10 +4,10 @@
       "local",
       "pip"
     ],
-    "injection_type": "local",
+    "injection_type": "",
     "injection": {
       "local": {
-        "import_name": "handwriting_features",
+        "import_name": "",
         "installation_name": ""
       },
       "pip": {
