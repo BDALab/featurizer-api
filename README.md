@@ -8,7 +8,7 @@
 
 **Server side application**:
 
-This package provides a modern RESTFull featurizer API created using Python programming language and [Flask-RESTful](https://flask-restful.readthedocs.io/en/latest/) library. It is designed to be used for various feature extraction libraries due to its feature injection capabilities (instructions are provided in the [Configuration](#Configuration) section) and flexible input/output data definition (multi-dimensional samples/features, multiple subjects, etc.). On top of that, the featurizer API provides endpoints for user authentication and JWT-based request authorization, it supports handling of cross-origin resource sharing, request-response caching, advanced logging, etc. It comes also with the basic support for containerization via Docker (Dockerfile and docker-compose).
+This package provides a modern RESTFul featurizer API created using Python programming language and [Flask-RESTful](https://flask-restful.readthedocs.io/en/latest/) library. It is designed to be used for various feature extraction libraries due to its feature injection capabilities (instructions are provided in the [Configuration](#Configuration) section) and flexible input/output data definition (multi-dimensional samples/features, multiple subjects, etc.). On top of that, the featurizer API provides endpoints for user authentication and JWT-based request authorization, it supports handling of cross-origin resource sharing, request-response caching, advanced logging, etc. It comes also with the basic support for containerization via Docker (Dockerfile and docker-compose).
 
 **Client side application**:
 
