@@ -1,4 +1,6 @@
-import pip
+import sys
+import subprocess
+import importlib
 from api.configuration import load_configuration
 
 
@@ -60,6 +62,6 @@ def configure_features_extraction_library_injection():
 def install_features_extraction_library(library_name):
     """Installs the features extraction library (if pip-installable)"""
     try:
-        __import__(library_name)
+        importlib.import_module(library_name)
     except ImportError:
-        pip.main(["install", library_name])
+        subprocess.check_call([sys.executable, "-m", "pip", "install", library_name])
