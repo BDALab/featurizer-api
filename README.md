@@ -68,7 +68,7 @@ pip install -r requirements.txt
 # Two necessary steps (see the configuration section bellow):
 #
 # 1. create .env file with the JWT secret key at api/.env
-# 2. configure features extractor libary injection in api/configuration/injection.json
+# 2. configure features extractor libary injection at api/configuration/injection.json
 ```
 
 ## Configuration
@@ -232,7 +232,7 @@ class FeatureExtractor(object):
 
 ## Injection
 
-The injection of the features-extraction library is configured in `api/configuration/injection.json`. The configuration looks as following:
+The injection of the features-extraction library is configured at `api/configuration/injection.json`. The configuration looks as following:
 
 ```
 {
