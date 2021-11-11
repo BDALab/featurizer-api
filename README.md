@@ -77,7 +77,7 @@ pip install -r requirements.txt
 
 To make the Featurizer API working, there are **two steps that must be performed**:
 
-1. create `.env` file with the JWT secret key at `api/.env` to enable proper user authorization of the requests (more information ca be seen in the next sub-section; 2. point - **authorization**)
+1. create `.env` file with the JWT secret key at `api/.env` to enable proper user authorization of the requests (more information can be seen in the next sub-section; 2. point - **authorization**)
 2. configure the features-extractor library injection at `api/configuration/injection.json` to enable automatic injection of the feature extractor to be used to compute the features (more information can be seen in the next sub-section; 6. point - **featurization**)
 
 ### Full configuration
