@@ -73,6 +73,15 @@ pip install -r requirements.txt
 
 ## Configuration
 
+### Necessary configuration
+
+To make the Featurizer API working, there are **two steps that must be performed**:
+
+1. create `.env` file with the JWT secret key at `api/.env` to enable proper user authorization of the requests (more information ca be seen in the next sub-section; 2. point - **authorization**)
+2. configure the features-extractor library injection at `api/configuration/injection.json` to enable automatic injection of the feature extractor to be used to compute the features (more information can be seen in the next sub-section; 6. point - **featurization**)
+
+### Full configuration
+
 The package provides various configuration files stored at `api/configuration`. More specifically, the following configuration is provided:
 1. authentication (`api/configuration/authentication.json`): it supports the configuration of the database of users. In this version, the `sqlite` database is used for simplicity. The main configuration is the URI for the `*.db` file (pre-set to `api/authentication/database/database/database.db`). An empty database file is created automatically.
 2. authorization (`api/configuration/authorization.json`): it supports the configuration of the request authorization. In this version, the JWT authorization is supported. The main configuration is the name of the `.env` file that stores the JWT secret key. For security reasons, the `.env` file is not part of this repository, i.e. **before using the API, it is necessary to create the .env file** at `api`-level, i.e. `api/.env` **and set the JWT_SECRET_KEY** field (e.g. `JWT_SECRET_KEY: "wfTHu38GpF5y60djwKC0EkFj586jdyZR"`).
